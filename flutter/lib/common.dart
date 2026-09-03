@@ -3730,7 +3730,42 @@ Color? disabledTextColor(BuildContext context, bool enabled) {
 }
 
 Widget loadPowered(BuildContext context) {
-  return const SizedBox.shrink();
+  final isDark = Theme.of(context).brightness == Brightness.dark;
+  return Container(
+    margin: const EdgeInsets.only(top: 6, bottom: 8),
+    child: Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: GestureDetector(
+            onTap: () {
+              launchUrl(Uri.parse('https://www.proradiobr.com'));
+            },
+            child: const Text(
+              'PróradioBR',
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFF8B5CF6),
+                decoration: TextDecoration.underline,
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(height: 3),
+        Text(
+          'Desenvolvido por Agencia Cleisson Cardoso',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 9.5,
+            color: isDark ? Colors.white70 : Colors.black87,
+          ),
+        ),
+      ],
+    ),
+  );
 }
 
 const _kDefaultLogoAsset = 'assets/logo.png';
@@ -3787,7 +3822,7 @@ class _LogoState extends State<_Logo> {
             },
           );
           return Container(
-            constraints: BoxConstraints(maxWidth: 300, maxHeight: 60),
+            constraints: BoxConstraints(maxWidth: 320, maxHeight: 80),
             child: image,
           ).marginOnly(left: 12, right: 12, top: 12);
         }
