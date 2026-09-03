@@ -2,9 +2,21 @@ name: Compilar Pró Rádio Windows (Recomendado)
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - "docs/**"
+      - "README.md"
+      - ".gitignore"
+
+permissions:
+  contents: write
 
 jobs:
   run-windows-build:
+    permissions:
+      contents: write
     uses: ./.github/workflows/flutter-build.yml
     secrets: inherit
     with:
