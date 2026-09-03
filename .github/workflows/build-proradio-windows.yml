@@ -15,8 +15,6 @@ permissions:
 
 jobs:
   run-windows-build:
-    permissions:
-      contents: write
     uses: ./.github/workflows/flutter-build.yml
     secrets: inherit
     with:
