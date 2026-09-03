@@ -1058,7 +1058,7 @@ pub async fn do_check_software_update() -> hbb_common::ResultType<()> {
 
 #[inline]
 pub fn get_app_name() -> String {
-    "Pró Rádio Suporte".to_string()
+    "ProRadioSupport".to_string()
 }
 
 #[inline]
