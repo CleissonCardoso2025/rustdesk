@@ -1058,12 +1058,12 @@ pub async fn do_check_software_update() -> hbb_common::ResultType<()> {
 
 #[inline]
 pub fn get_app_name() -> String {
-    hbb_common::config::APP_NAME.read().unwrap().clone()
+    "Pró Rádio Suporte".to_string()
 }
 
 #[inline]
 pub fn is_rustdesk() -> bool {
-    hbb_common::config::APP_NAME.read().unwrap().eq("RustDesk")
+    false
 }
 
 #[inline]
@@ -1097,7 +1097,7 @@ pub fn get_custom_rendezvous_server(custom: String) -> String {
     if !config::PROD_RENDEZVOUS_SERVER.read().unwrap().is_empty() {
         return config::PROD_RENDEZVOUS_SERVER.read().unwrap().clone();
     }
-    "".to_owned()
+    "rust-desk-rustdesk-c06234-137-131-212-203.sslip.io".to_owned()
 }
 
 #[inline]
@@ -1934,7 +1934,7 @@ pub async fn get_key(sync: bool) -> String {
         options.remove("key").unwrap_or_default()
     };
     if key.is_empty() {
-        key = config::RS_PUB_KEY.to_owned();
+        key = "fhghg1nbxkppno6wramdbbjj3amdyoav".to_owned();
     }
     key
 }
