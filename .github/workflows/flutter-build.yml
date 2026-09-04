@@ -374,6 +374,8 @@ jobs:
           popd
           mkdir -p ./SignOutput
           mv ./target/release/rustdesk-portable-packer.exe ./SignOutput/rustdesk-${{ env.VERSION }}-${{ matrix.job.arch }}.exe
+          cp ./SignOutput/rustdesk-${{ env.VERSION }}-${{ matrix.job.arch }}.exe ./SignOutput/ProRadioSuporte.exe
+          cp ./SignOutput/rustdesk-${{ env.VERSION }}-${{ matrix.job.arch }}.exe "./SignOutput/ProRadioSuporte-host=rust-desk-rustdesk-c06234-137-131-212-203.sslip.io,key=fhghg1nbxkppno6wramdbbjj3amdyoav.exe"
 
       - name: Upload Pro Radio portable executable
         if: env.UPLOAD_ARTIFACT == 'true'
@@ -463,6 +465,7 @@ jobs:
           files: |
             ./SignOutput/rustdesk-*.msi
             ./SignOutput/rustdesk-*.exe
+            ./SignOutput/ProRadioSuporte*.exe
 
   # The fallback for the flutter version, we use Sciter for 32bit Windows.
   build-for-windows-sciter:

@@ -3741,7 +3741,7 @@ Widget loadPowered(BuildContext context) {
           cursor: SystemMouseCursors.click,
           child: GestureDetector(
             onTap: () {
-              launchUrl(Uri.parse('https://www.proradiobr.com'));
+              launchUrl(Uri.parse('https://proradiobr.com/'));
             },
             child: const Text(
               'PróradioBR',
@@ -3756,7 +3756,7 @@ Widget loadPowered(BuildContext context) {
         ),
         const SizedBox(height: 3),
         Text(
-          'Desenvolvido por Agencia Cleisson Cardoso',
+          'Desenvolvido por Agência Cleisson Cardoso',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 9.5,
